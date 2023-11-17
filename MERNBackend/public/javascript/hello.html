@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="css/pickup.css"> -->
+    <style>@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+        
+        :root {
+            --body-color: #2c2d2a;
+            --savanna-bg: #e9bf8b;
+            --beach-bg: #e7dfcf;
+            --glacier-bg: #b6d6c8;
+            --coral-bg: #e86357;
+            --arrow-fill: #333231;
+            --body-font: "Montserrat", sans-serif;
+            --italic-font: "EB Garamond", serif;
+        }
+        
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--body-color);
+        }
+        
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+        }
+        
+        body {
+            font-family: var(--body-font);
+            background-color: #1d1e20;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2em;
+            width: 100%;
+            height: 100vh;
+            color: var(--body-color);
+            
+            @media (max-width: 480px) {
+                padding: 0;
+            }
+        }
+        
+        .container {
+            max-width: 1100px;
+            border-radius: 4px;
+            max-height: 680px;
+            height: 90vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+            background-color: #e6decf;
+            padding: 0 30px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+                @media (max-width: 480px) {
+                height: 100%;
+                max-height: 100%;
+            }
+        }
+        
+        .logo {
+            width: 116px;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            height: 62px;
+            width: 100%;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-weight: 600;
+            font-size: 15px;
+            border-bottom: 1px solid rgba(44, 45, 42, 0.25);
+            position: sticky;
+            top: 0;
+            left: 0;
+            background-color: var(--beach-bg);
+            z-index: 6;
+    
+            
+            @media (max-width: 575px) {
+                width: calc(100% + 20px);
+            margin-left: -10px;
+            }
+        
+         
+                
+                @media screen and (max-width: 740px) {
+                    display: none;
+                }
+            }
+        
+                
+
+            .header-menu {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+            }
+            a:not(:first-child) {
+                    margin-left: 30px;
+                }
+        
+            .menu-icon {
+                display: flex;
+                align-items: center;
+                margin-right: 20px;
+        
+                
+            }
+            .menu-icon svg {
+                    width: 22px;
+                }
+        
+            .header-icons {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+        
+                
+            }
+
+            .header-icons svg {
+                    width: 18px;
+        
+                    
+                }
+
+                .header-icons:not(:last-child) {
+                        margin-right: 20px;
+                    }
+        
+        
+        .left-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 320px;
+            
+            @media screen and (max-width: 930px) {
+                text-align: center;
+                max-width: 450px;
+            }
+        }
+        
+        .mySwiper {
+            display: flex;
+            flex-grow: 1;
+            position: relative;
+        }
+        
+        .main {
+            padding: 42px 0 30px;
+            display: flex;
+            flex-grow: 1;
+            position: relative;
+        
+            @media screen and (max-width: 930px) {
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+            }
+        
+            
+        
+            
+        
+        
+                
+            }
+        
+        .main-content__title {
+                    font-size: 26px;
+                    font-family: var(--italic-font);
+                    font-style: italic;
+                    margin-bottom: 14px;
+                    transition-delay: 0.2s;
+                }
+        .main-content__subtitle {
+                    font-size: 14px;
+                    line-height: 1.5;
+                    margin-bottom: 24px;
+                    letter-spacing: -0.01em;
+                    transition-delay: 0.3s;
+                }
+        .main-content .more-menu {
+                    font-size: 13px;
+                    font-weight: 500;
+                    display: flex;
+                    align-items: center;
+                    transition-delay: 0.4s;
+                    
+                    @media screen and (max-width: 930px) {
+                        justify-content: center;
+                    }
+        
+                    
+                }
+        .main-content .more-menu svg {
+                        width: 28px;
+                        height: 18px;
+                        margin-left: 10px;
+                    }
+
+        .main-header {
+                text-transform: uppercase;
+                font-size: 14px;
+                letter-spacing: 4px;
+                font-weight: 600;
+                transition-delay: 0.2s;
+            }
+        
+            .main-title {
+                font-family: var(--italic-font);
+                font-size: 100px;
+                font-weight: 400;
+                margin-top: 10px;
+                line-height: 1em;
+                transition-delay: 0.3s;
+            }
+        
+            .main-subtitle {
+                font-family: var(--italic-font);
+                font-weight: 400;
+                font-size: 32px;
+                margin-top: 14px;
+                margin-bottom: 60px;
+                transition-delay: 0.4s;
+            }
+        
+        .center {
+            display: flex;
+            margin-left: 120px;
+            position: relative;
+            flex-shrink: 0;
+        
+            @media screen and (max-width: 930px) {
+                margin-left: 0;
+                margin-bottom: 56px;
+            }
+        
+            
+        
+            
+        }
+
+        .center .bottle-bg {
+                width: 320px;
+                height: 450px;
+                object-fit: cover;
+                border-radius: 160px;
+        
+                @media screen and (max-width: 930px) {
+                    width: 260px;
+                    height: 390px;
+                }
+                @media screen and (max-width: 575px) {
+                    width: 220px;
+                    height: 340px;
+                }
+            }
+
+            .center .bottle-img {
+                position: absolute;
+                top: 25%;
+                left: 0;
+                transform: scale(1.6);
+            }
+        
+        .swiper-pagination {
+            position: absolute;
+            right: 30px;
+            left: auto;
+            top: 100px;
+            width: auto;
+            bottom: auto;
+            z-index: 2;
+            font-size: 14px;
+            font-family: var(--body-font);
+            font-weight: 500;
+        }
+        
+        .button-wrapper {
+            position: absolute;
+            right: 30px;
+            bottom: 20px;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        
+            @media screen and (max-width: 930px) {
+                top: 0;
+                left: 0;
+                width: 100%;
+                justify-content: space-between;
+                padding: 0 60px;
+            }
+            
+            @media screen and (max-width: 575px) {
+                padding: 0 20px;
+            }
+        
+            
+        
+            
+        
+              
+        
+                
+            }
+
+            .button-wrapper .swiper-button {
+                border: 1px solid var(--body-color);
+                border-radius: 50%;
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(to right, var(--body-color) 40%, transparent 0%);
+                background-size: 200% 100%;
+                background-position: right bottom;
+                transition: all 0.3s ease-out;
+                cursor: pointer;
+            }
+            .button-wrapper .swiper-button + .swiper-button {
+                    margin-left: 16px;
+        
+                    @media screen and (max-width: 930px) {
+                        margin-left: 0;
+                    }
+                }
+            .button-wrapper:hover {
+                    background-color: var(--body-color);
+                    background-position: left bottom;
+            }
+            .button-wrapper svg {
+                        stroke: #fff;
+                    }
+
+            .swiper-button svg {
+                width: 28px;
+            }
+        
+            .swiper-prev-button {
+                background: linear-gradient(to left, var(--body-color) 40%, transparent 0%);
+                background-size: 200% 100%;
+                background-position: left bottom;
+                transition: all 0.3s ease-out;
+                
+            }
+        
+
+        .swiper-prev-button svg {
+                    transform: rotate(-180deg);
+                }
+                .swiper-prev-button svg:hover {
+                    background-position: right bottom;
+                }
+        
+        .swiper-prev-button .swiper-slide {
+            opacity: 0 !important;
+            transition: 0.4s;
+            
+        }
+        .swiper-prev-button .swiper-slide-active {
+                opacity: 1 !important;
+            }
+        
+        .swiper-slide .main-wrapper > *,
+        .swiper-slide .main-content > * {
+            transform: translateY(-30px);
+            opacity: 0;
+            transition-duration: 0.8s;
+        }
+        
+        .swiper-slide-active .main-wrapper > *,
+        .swiper-slide-active .main-content > * {
+            transform: none;
+            opacity: 1;
+        }
+        
+        .swiper-slide .bottle-bg {
+            transition-duration: 0.6s;
+            opacity: 0;
+            object-position: 60%;
+        }
+        
+        .swiper-slide-active .bottle-bg {
+            opacity: 1;
+            transform: none;
+            object-position: 50%;
+        }
+        
+        .swiper-slide .bottle-img {
+            transition-duration: 0.8s;
+            transform: scale(1.2);
+            opacity: 0;
+        }
+        
+        .swiper-slide-active .bottle-img {
+            opacity: 1;
+            transform: scale(1.6);
+        }
+        
+        [data-sld="1"] {
+            .container,
+            .header {
+                background-color: var(--savanna-bg);
+            }
+        }
+        
+        [data-sld="2"] {
+            .container,
+            .header {
+                background-color: var(--glacier-bg);
+            }
+        }
+        
+        [data-sld="3"] {
+            .container,
+            .header {
+                background-color: var(--coral-bg);
+            }
+        }
+        </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.4/swiper-bundle.min.js" integrity="sha512-k2o1KZdvUi59PUXirfThShW9Gdwtk+jVYum6t7RmyCNAVyF9ozijFpvLEWmpgqkHuqSWpflsLf5+PEW6Lxy/wA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script src="javascript/pickup.js"></script> -->
+	<script>var swiper = new Swiper(".mySwiper", {
+	navigation: {
+		nextEl: ".swiper-next-button",
+		prevEl: ".swiper-prev-button"
+	},
+	effect: "fade",
+	loop: "infinite",
+	pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
+        }
+});
+
+swiper.on('slideChange', function(sld) {
+	document.body.setAttribute('data-sld', sld.realIndex);
+})
+</script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+	<div class="mySwiper">
+		<div class="main-wrapper swiper-wrapper">
+			<div class="main swiper-slide" id="beach">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Closca Bottle</h3>
+						<h1 class="main-title">Beach</h1>
+						<h2 class="main-subtitle">€ 39.90</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">In 20 years, there could be more plastic in our oceans than fish.</div>
+						<div class="main-content__subtitle">Plastic pollution injures more than 100.000 marine animals every year.It takes around 450 years for one plastic bottle to decompose.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<line x1="-5" y1="12" x2="19" y2="12" />
+								<line x1="15" y1="16" x2="19" y2="12" />
+								<line x1="15" y1="8" x2="19" y2="12" />
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://cdn.shopify.com/s/files/1/0689/1443/t/34/assets/Beach_1920.jpg?v=1029210661698833530" alt="">
+						<img class="bottle-img" src="https://cdn.shopify.com/s/files/1/0689/1443/t/34/assets/bottle_beach.png?v=11784267851598469514" />
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="savanna">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Closca Bottle</h3>
+						<h1 class="main-title">Savanna</h1>
+						<h2 class="main-subtitle">€ 39.90</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">The Earth’s area affected by desertification is approx 11 times India’s size.
+						</div>
+						<div class="main-content__subtitle">The Savannas act as a carbon sink, absorbing CO2 from the atmosphere and helping to maintain the balance of global temperatures.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<line x1="-5" y1="12" x2="19" y2="12" />
+								<line x1="15" y1="16" x2="19" y2="12" />
+								<line x1="15" y1="8" x2="19" y2="12" />
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://images.unsplash.com/photo-1613109526778-27605f1f27d2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80" alt="">
+						<img class="bottle-img" src="https://cdn.shopify.com/s/files/1/0689/1443/t/34/assets/savanna_OK.png?v=4783820813181844557" />
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="glacier">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Closca Bottle</h3>
+						<h1 class="main-title">Glacier</h1>
+						<h2 class="main-subtitle">€ 39.90</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">Glaciers contain 75% of the World's freshwater.
+						</div>
+						<div class="main-content__subtitle">The effects of melting ice glaciers are biodiversity loss, the rising of the sea level and the deficiency of freshwater, among others.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<line x1="-5" y1="12" x2="19" y2="12" />
+								<line x1="15" y1="16" x2="19" y2="12" />
+								<line x1="15" y1="8" x2="19" y2="12" />
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://www.discover-the-world.com/app/uploads/2018/05/chile-patagonia-calving-glacier-is-1150x863-c-default.jpg" alt="">
+						<img class="bottle-img" src="https://cdn.shopify.com/s/files/1/0689/1443/t/34/assets/Glacier_OK.png?v=7185877315400411030" />
+					</div>
+				</div>
+			</div>
+			<div class="main swiper-slide" id="coral">
+				<div class="left-side">
+					<div class="main-wrapper">
+						<h3 class="main-header">Closca Bottle</h3>
+						<h1 class="main-title">Coral</h1>
+						<h2 class="main-subtitle">€ 39.90</h2>
+					</div>
+					<div class="main-content">
+						<div class="main-content__title">We will have lost 60% of our coral reefs by 2030.
+						</div>
+						<div class="main-content__subtitle">Coral reefs are essential to humans, as they protect the shorelines and are a source of
+							nutrients and habitat for thousands of marine species.</div>
+						<div class="more-menu">
+							Shop Now
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.7" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+								<line x1="-5" y1="12" x2="19" y2="12" />
+								<line x1="15" y1="16" x2="19" y2="12" />
+								<line x1="15" y1="8" x2="19" y2="12" />
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="center">
+					<div class="right-side__img">
+						<img class="bottle-bg" src="https://images.unsplash.com/photo-1546500840-ae38253aba9b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3260&q=80" alt="">
+						<img class="bottle-img" src="https://cdn.shopify.com/s/files/1/0689/1443/t/34/assets/Coral_OK.png?v=14596995446202437119" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="button-wrapper">
+		<div class="swiper-button swiper-prev-button">
+			<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+			</svg>
+		</div>
+		<div class="swiper-button swiper-next-button">
+			<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+			</svg>
+		</div>
+	</div>
+	<div class="swiper-pagination"></div>
+</div>
+</body>
+</html>

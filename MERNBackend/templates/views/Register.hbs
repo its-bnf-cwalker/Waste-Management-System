@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/register.css">
+        <!--Google Font-->
+    {{!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> --}}
+    <!--Google Font-->
+    <link rel="stylesheet" href="css/navbarc.css">
+    {{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/compiled-tailwind.min.css" /> --}}
+    
+</head>
+<body>
+{{!-- 
+  <div class="nav1">
+      <div class="nav2">
+        <div class="nav3">
+        <a href="index">
+          R<sup>3</sup>
+        </a>
+        </div>
+
+
+        <div class="nav4">
+          <a href="#">
+          <i class="lg:text-gray-300 text-gray-500 fa-solid fa-user-lock fa-2x text-lg leading-lg hello"></i>
+          <span class="hidden">Login</span>
+          </a>
+        </div>
+      </div>
+  </div> --}}
+  <div class="wrapper">
+  <form action="/register" method="POST">
+
+
+  <div class="register down">
+    <div class="form-element">
+      <span><i class="fa fa-user"></i></span><input name="username" type="text" placeholder="User Name"/>
+    </div>
+    <div class="form-element">
+      <span><i class="fa fa-envelope"></i></span><input name="email" type="email" placeholder="Your Email Address"/>
+    </div>
+    <div class="form-element">
+      <span><i class="fa fa-phone"></i></span><input type="tel" name="tel" placeholder="Mobile Number" />
+    </div>
+    <div class="form-element">
+      <span><i class="fa fa-lock"></i></span><input name="password" type="password" placeholder="Password"/>
+    </div>
+    <div class="form-element">
+      <span><i class="fa fa-lock"></i></span><input name="confirmpassword" type="password" placeholder="Re-Enter Password"/>
+    </div>
+    <button type="submit" value="Submit" class="btn-register">Register</button>
+  </div>
+  </form>
+  
+  <div class="login-view-toggle">
+    <div class="login-toggle">Already have an account? <a href="login">Login</a></div>
+  </div>
+  </div>
+</body>
+</html>

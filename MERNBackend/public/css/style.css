@@ -1,0 +1,44 @@
+.hov1:hover{
+  background-image: linear-gradient(red,orange,yellow);
+  cursor: pointer;
+ 
+  
+}
+
+
+.jod:hover{
+  /* padding: 50px;
+  transition: transform .2s; /* Animation 
+  width: 50%;
+  height: 50%;
+  margin: 0 auto; */
+  transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  background-image: linear-gradient(red,orange,red);
+  cursor: pointer;
+  /* border: 4px solid rgba(248, 178, 3, 0.663);
+  border-radius: 5%; */
+
+}
+
+
+.jod1:hover {
+  transform: scale(0.7); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  background-image: linear-gradient(pink,rgb(208, 36, 176));
+  cursor: pointer;
+  border: 4px solid pink;
+  border-radius: 5%;
+
+
+}
+
+
+.pad1{
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.FirstIMG {
+  width: 468.525px;
+}
+
+

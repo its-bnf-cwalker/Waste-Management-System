@@ -1,0 +1,30 @@
+{
+  "name": "node_proj_1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js -e js,hbs,css,scss"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.6.1",
+    "node": "^18.9.0",
+    "nodemon": "^2.0.19",
+    "openssl": "^2.0.0",
+    "sass": "^1.55.0",
+    "scss": "^0.2.4",
+    "swiper": "^8.4.4"
+  }
+}
